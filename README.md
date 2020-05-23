@@ -14,17 +14,17 @@ Recovering the files:
 * Download the latest version of python (https://www.python.org/downloads/)
 * Open the flash-unveiled file in idle
 * From the toolbar at the top in idle, select "Run" menu and then select "Run... Customized" 
-* Give the command line argument "\\\\.\\Harddisk*Partition*", replace the * by following these steps:
+* Give the command line argument "\\\\\\\\.\\\\Harddisk*Partition*", replace the * by following these steps:
 	* On the start menu type "diskpart" and press enter
 	* Diskpart window appears
 	* On the diskpart window type "list-disk" and press enter
 	* It will list all the disks mounted to the computer
 	* Choose your usb drive disk by typing "select disk n"
-	* Here the value of n will give the first * value in "\\\\.\\Harddisk*Partition*"
+	* Here the value of n will give the first * value in "\\\\\\\\.\\\\Harddisk*Partition*"
 	* Then type "list partition" and press enter
 	* Select the partition number of the FAT32 of the drive
-	* Here the partition number will give the second * value in "\\\\.\\Harddisk*Partition*"
-	* Eg: "\\\\.\\Harddisk1Parttion1"
+	* Here the partition number will give the second * value in "\\\\\\\\.\\\\Harddisk*Partition*"
+	* Eg: "\\\\\\\\.\\\\Harddisk1Partition1"
 * After giving the command line argument, press enter and the program will start compiling and output some data on the console window
 * If any of the files will be recovered they will be saved in the directory where flash-unveiled.py file is stored.
 
