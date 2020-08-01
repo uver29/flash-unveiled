@@ -28,16 +28,24 @@ offset = df['Offset']
 
 folder = df['Folder']
 
-recovered_files_directory = sys.argv[2]
-if os.path.isdir(recovered_files_directory):
-    print('The specified directory already exists. Create a new one.')
-    exit()
-os.makedirs(recovered_files_directory)
-files_count = {}
-for fold in folder:
-    if not os.path.isdir(os.path.join(recovered_files_directory, fold)):
-        os.makedirs(os.path.join(recovered_files_directory, fold))
-        files_count[fold] = 1
+recovered_files_directory = ''
+dd_image_name = ''
+files_count = []
+
+
+def make_recovery_directory(directory):
+    global files_count
+    global recovered_files_directory
+    recovered_files_directory = directory
+    if os.path.isdir(recovered_files_directory):
+        print('The specified directory already exists. Create a new one.')
+        exit()
+    os.makedirs(recovered_files_directory)
+    files_count = {}
+    for fold in folder:
+        if not os.path.isdir(os.path.join(recovered_files_directory, fold)):
+            os.makedirs(os.path.join(recovered_files_directory, fold))
+            files_count[fold] = 1
 
 
 def find_header(data):
@@ -56,7 +64,7 @@ def find_footer(data):
         return True
 
 
-def recover_files(start_sector, end_sector, signatures_index):
+def recover_files(dd_image, start_sector, end_sector, signatures_index):
     dd_image.seek(start_sector * 512)
     size = (end_sector - start_sector + 1) * 512
     data = dd_image.read(size)
@@ -66,35 +74,47 @@ def recover_files(start_sector, end_sector, signatures_index):
             f.write(data)
 
 
-dd_image_name = sys.argv[1]
 
-with open(dd_image_name, 'rb') as dd_image:
-    num_of_sectors = 0
-    previous_found_signatures_index = []
+def scan():
+    global dd_image
+    with open(dd_image_name, 'rb') as dd_image:
+        num_of_sectors = 0
+        previous_found_signatures_index = []
 
-    while True:
+        while True:
 
-        dd_image.seek(num_of_sectors * 512)
-        dd_image_contents = dd_image.read(512)
-        dd_image_contents = codecs.encode(dd_image_contents, "hex_codec")
-        raw_bytes = dd_image_contents.decode("utf-8")
+            dd_image.seek(num_of_sectors * 512)
+            dd_image_contents = dd_image.read(512)
+            dd_image_contents = codecs.encode(dd_image_contents, "hex_codec")
+            raw_bytes = dd_image_contents.decode("utf-8")
 
-        if not raw_bytes:
-            print('Scanned {} kilobytes'.format((num_of_sectors * 512) / 1024))
-            # plot_zeros()
-            break
+            if not raw_bytes:
+                print('Scanned {} kilobytes'.format((num_of_sectors * 512) / 1024))
+                # plot_zeros()
+                break
 
-        found_signatures_index = find_header(raw_bytes)
-        if found_signatures_index:
-            if previous_found_signatures_index:
-                recover_files(found_signatures_at_sector, num_of_sectors - 1, previous_found_signatures_index)
+            found_signatures_index = find_header(raw_bytes)
+            if found_signatures_index:
+                if previous_found_signatures_index:
+                    recover_files(dd_image, found_signatures_at_sector, num_of_sectors - 1, previous_found_signatures_index)
 
-            previous_found_signatures_index = found_signatures_index
-            found_signatures_at_sector = num_of_sectors
+                previous_found_signatures_index = found_signatures_index
+                found_signatures_at_sector = num_of_sectors
 
-        elif previous_found_signatures_index:
-            if find_footer(raw_bytes):
-                recover_files(found_signatures_at_sector, num_of_sectors, previous_found_signatures_index)
-                previous_found_signatures_index = []
+            elif previous_found_signatures_index:
+                if find_footer(raw_bytes):
+                    recover_files(dd_image, found_signatures_at_sector, num_of_sectors, previous_found_signatures_index)
+                    previous_found_signatures_index = []
 
-        num_of_sectors += 1
+            num_of_sectors += 1
+
+
+def main(drive, save):
+    global dd_image_name
+    dd_image_name = drive
+    make_recovery_directory(save)
+    scan()
+
+
+# if __name__ == '__main__':
+#     main(drive, save)
