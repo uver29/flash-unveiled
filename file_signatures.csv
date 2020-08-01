@@ -1,0 +1,46 @@
+Description,Extension,Header,Footer,Offset,Folder
+3GPP multimedia files,3GP ,00 00 00 14 66 74 79 70 ,,0,video_files
+7-Zip compressed file,7Z ,37 7A BC AF 27 1C ,,0,compressed_files
+Audio Interchange File,AIFF ,46 4F 52 4D 00 ,,0,audio_files
+Resource Interchange File Format,AVI ,52 49 46 46 ,,0,video_files
+Speedtouch router firmware,BIN ,42 4C 49 32 32 33 51 ,,0,disc_and_media_files
+Bitmap image,BMP ,42 4D ,,0,image_files
+Resource Interchange File Format,CDA ,52 49 46 46 ,,0,audio_files
+Microsoft Office document,DOC ,D0 CF 11 E0 A1 B1 1A E1 ,57 6F 72 64 2E 44 6F 63 75 6D 65 6E 74 2E,0,text_files
+Flash video file,FLV ,46 4C 56 ,,0,video_files
+GIF file,GIF ,47 49 46 38 ,21 00 00 3B 00,0,image_files
+Windows icon|printer spool file,ICO ,00 00 01 00 ,,0,system_files
+ISO-9660 CD Disc Image,ISO ,43 44 30 30 31 ,,0,disc_and_media_files
+JPEG IMAGE,JPG ,FF D8 FF E0 ,FF D9,0,image_files
+Symantec Wise Installer log,LOG ,2A 2A 2A 20 20 49 6E 73 ,,0,database_files
+Apple audio and video files,M4A ,00 00 00 20 66 74 79 70 4D 34 41 ,,0,video_files
+MIDI sound file,MID ,4D 54 68 64 ,,0,audio_files
+MIDI sound file,MIDI ,4D 54 68 64 ,,0,audio_files
+Matroska stream file,MKV ,1A 45 DF A3 93 42 82 88 ,,0,video_files
+QuickTime movie_1,MOV ,6D 6F 6F 76 ,,4,video_files
+MP3 audio file,MP3 ,49 44 33 ,,0,audio_files
+MPEG video file,MPG ,00 00 01 B3 ,,0,video_files
+Microsoft Installer package,MSI ,D0 CF 11 E0 A1 B1 1A E1 ,,0,system_files
+OpenDocument template,ODP ,50 4B 03 04 ,,0,presentation_files
+OpenDocument template,ODT ,50 4B 03 04 ,,0,text_files
+Ogg Vorbis Codec compressed file,OGG ,4F 67 67 53 00 02 00 00 ,,0,audio_files
+PDF file,PDF ,25 50 44 46 ,25 45 4F 46 0D,0,text_files
+PNG image,PNG ,89 50 4E 47 0D 0A 1A 0A ,,0,image_files
+Microsoft Office document,PPT ,D0 CF 11 E0 A1 B1 1A E1 ,50 00 6F 00 77 00 65 00 72 00 50 00 6F 00 69 00 6E 00 74 00 20 00 44 00 6F 00 63 00 75 00 6D 00 65 00 6E 00 74,0,presentation_files
+MS Office 2007 documents,PPTX ,50 4B 03 04 14 00 06 00 ,,0,presentation_files
+Photoshop image,PSD ,38 42 50 53 ,,0,image_files
+WinRAR compressed archive,RAR ,52 61 72 21 1A 07 00 ,,0,compressed_files
+RealMedia streaming media,RM ,2E 52 4D 46 ,,0,video_files
+RTF file,RTF ,7B 5C 72 74 66 31 ,,0,text_files
+Shockwave Flash file,SWF ,43 57 53 ,,0,video_files
+VideoVCD|VCDImager file,VCD ,45 4E 54 52 59 56 43 44 ,,0,disc_and_media_files
+DVD video file,VOB ,00 00 01 BA ,,0,video_files
+Resource Interchange File Format,WAV ,52 49 46 46 ,,0,audio_files
+Windows Media Audio|Video File,WMA ,30 26 B2 75 8E 66 CF 11 ,,0,audio_files
+Windows Media Audio|Video File,WMV ,30 26 B2 75 8E 66 CF 11 ,,0,video_files
+WordPerfect text and graphics,WPD ,FF 57 50 43 ,,0,text_files
+Windows Media Player playlist,WPL ,4D 69 63 72 6F 73 6F 66 74 20 57 69 6E 64 6F 77 73 20 4D 65 64 69 61 20 50 6C 61 79 65 72 20 2D 2D 20 ,,84,audio_files
+Microsoft Office document,XLS ,D0 CF 11 E0 A1 B1 1A E1 ,FE FF FF FF 00 00 00 00 00 00 00 00 57 00 6F 00 72 00 6B 00 62 00 6F 00 6F 00 6B 00,0,spreadsheet_files
+MS Office 2007 documents,XLSX ,50 4B 03 04 14 00 06 00 ,,0,spreadsheet_files
+User Interface Language,XML ,3C 3F 78 6D 6C 20 76 65 72 73 69 6F 6E 3D 22 31 2E 30 22 3F 3E ,,0,database_files
+PKZIP archive_1,ZIP ,50 4B 03 04 ,50 4B 05 06 00,0,compressed_files
