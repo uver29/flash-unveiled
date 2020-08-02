@@ -4,7 +4,6 @@ Description,Extension,Header,Footer,Offset,Folder
 Audio Interchange File,AIFF ,46 4F 52 4D 00 ,,0,audio_files
 Resource Interchange File Format,AVI ,52 49 46 46 ,,0,video_files
 Speedtouch router firmware,BIN ,42 4C 49 32 32 33 51 ,,0,disc_and_media_files
-Bitmap image,BMP ,42 4D ,,0,image_files
 Resource Interchange File Format,CDA ,52 49 46 46 ,,0,audio_files
 Microsoft Office document,DOC ,D0 CF 11 E0 A1 B1 1A E1 ,57 6F 72 64 2E 44 6F 63 75 6D 65 6E 74 2E,0,text_files
 Flash video file,FLV ,46 4C 56 ,,0,video_files
@@ -44,3 +43,4 @@ Microsoft Office document,XLS ,D0 CF 11 E0 A1 B1 1A E1 ,FE FF FF FF 00 00 00 00 
 MS Office 2007 documents,XLSX ,50 4B 03 04 14 00 06 00 ,,0,spreadsheet_files
 User Interface Language,XML ,3C 3F 78 6D 6C 20 76 65 72 73 69 6F 6E 3D 22 31 2E 30 22 3F 3E ,,0,database_files
 PKZIP archive_1,ZIP ,50 4B 03 04 ,50 4B 05 06 00,0,compressed_files
+MPEG-4,MP4,66 74 79 70,,4,video_files
